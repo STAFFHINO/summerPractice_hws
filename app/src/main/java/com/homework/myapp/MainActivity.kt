@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun calculateResult() {
         val name = nameEditText.text.toString()
         val height = heightEditText.text.toString().toFloatOrNull()
@@ -58,6 +59,6 @@ class MainActivity : AppCompatActivity() {
         val signs = listOf<String>("Овен","Телец","Близнецы","Рак","Лев","Дева",
             "Весы","Скорпион","Стрелец","Козерог","Водолей","Рыбы")
         val result = signs[(age * (name.length + (height - weight)) % 12).toInt()]
-        resultTextView.text = "Ответ: вы по гороскопу $result"
+        resultTextView.text = "Ответ: you are $result"
     }
 }
