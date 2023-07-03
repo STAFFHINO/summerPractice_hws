@@ -16,7 +16,7 @@ class HiddenFragment : Fragment(R.layout.fragment_hidden) {
 
         binding?.run {
             btnToHistory.setOnClickListener {
-                findNavController().navigate(R.id.action_hiddenFragment_to_historyFragment)
+                findNavController().navigateUp()
             }
         }
     }

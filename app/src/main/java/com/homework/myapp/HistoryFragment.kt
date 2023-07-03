@@ -18,8 +18,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
         binding?.run {
             btnToHidden.setOnClickListener {
                 findNavController().navigate(R.id.action_historyFragment_to_hiddenFragment)
-                val name : String = "com.homework.myapp.HistoryFragment"
-                binding?.root?.let { it1 -> Snackbar.make(it1, "We are here from $name", Snackbar.LENGTH_LONG).show() }
+                binding?.root?.let { it1 -> Snackbar.make(it1, "We are here from com.homework.myapp.HistoryFragment", Snackbar.LENGTH_LONG).show() }
             }
         }
     }
