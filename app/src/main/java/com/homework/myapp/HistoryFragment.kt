@@ -10,6 +10,9 @@ import com.homework.myapp.databinding.FragmentHistoryBinding
 
 class HistoryFragment : Fragment(R.layout.fragment_history) {
     private var binding: FragmentHistoryBinding? = null
+    companion object {
+        private const val FRAGMENT_NAME = "com.homework.myApp.HistoryFragment"
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,8 +20,9 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
 
         binding?.run {
             btnToHidden.setOnClickListener {
-                findNavController().navigate(R.id.action_historyFragment_to_hiddenFragment)
-                binding?.root?.let { it1 -> Snackbar.make(it1, "We are here from com.homework.myapp.HistoryFragment", Snackbar.LENGTH_LONG).show() }
+                findNavController().navigate(R.id.action_historyFragment_to_hiddenFragment,
+                    HiddenFragment.createBundle(HistoryFragment().javaClass.name))
+                binding?.root?.let { it1 -> Snackbar.make(it1, "We are here from $FRAGMENT_NAME", Snackbar.LENGTH_LONG).show() }
             }
         }
     }
