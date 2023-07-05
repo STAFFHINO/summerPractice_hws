@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.homework.myapp.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.homework.myapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.homework.myapp.SettingFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.homework.myapp.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.homework.myapp.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_hiddenFragment"
+            app:destination="@id/hiddenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hiddenFragment"
+        android:name="com.homework.myapp.HiddenFragment"
+        android:label="fragment_hidden"
+        tools:layout="@layout/fragment_hidden" />
+</navigation>
